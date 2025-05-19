@@ -15,7 +15,7 @@ namespace Source.CodeBase.Logic.GlobalFSM.States
         {
             base.Enter();
 
-            _spawner.Spawn();
+            _spawner.Run();
             Switch();
         }
 

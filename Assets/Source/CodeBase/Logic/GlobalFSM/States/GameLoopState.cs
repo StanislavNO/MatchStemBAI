@@ -1,4 +1,5 @@
 using Source.CodeBase.GameplayData;
+using Source.CodeBase.GameplayData.ActionBar;
 using Source.CodeBase.Logic.Controllers;
 
 namespace Source.CodeBase.Logic.GlobalFSM.States
@@ -7,7 +8,7 @@ namespace Source.CodeBase.Logic.GlobalFSM.States
     {
         private readonly PlayerInputController _playerInputController;
         private readonly ViewController _viewController;
-        private readonly IReadOnlyScore _score;
+        private readonly IReadOnlyBar _bar;
         private readonly IReadOnlyMap _map;
         
         public GameLoopState(
@@ -15,11 +16,11 @@ namespace Source.CodeBase.Logic.GlobalFSM.States
             PlayerInputController playerInputController,
             ViewController viewController,
             IReadOnlyMap mapData,
-            IReadOnlyScore score) : base(switcher)
+            IReadOnlyBar bar) : base(switcher)
         {
             _playerInputController = playerInputController;
             _viewController = viewController;
-            _score = score;
+            _bar = bar;
             _map = mapData;
         }
 
@@ -40,14 +41,14 @@ namespace Source.CodeBase.Logic.GlobalFSM.States
         protected override void Subscribe()
         {
             _viewController.OnRestartClicked += OnRestartClicked;
-            _score.OnScoreComplied += Switch;
+            _bar.OnBarFulled += Switch;
             _map.OnItemEnded += Switch;
         }
 
         protected override void Unsubscribe()
         {
             _viewController.OnRestartClicked -= OnRestartClicked;
-            _score.OnScoreComplied -= Switch;
+            _bar.OnBarFulled -= Switch;
             _map.OnItemEnded -= Switch;
         }
 

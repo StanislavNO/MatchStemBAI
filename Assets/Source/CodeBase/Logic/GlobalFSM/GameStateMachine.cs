@@ -1,11 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.Logic.GlobalFSM.States;
+using Zenject;
 
 namespace Source.CodeBase.Logic.GlobalFSM
 {
-    public class GameStateMachine : IStateSwitcher
+    public class GameStateMachine : IStateSwitcher, IInitializable, IDisposable
     {
         private readonly List<IState> _states;
         private IState _currentState;
@@ -16,15 +18,9 @@ namespace Source.CodeBase.Logic.GlobalFSM
             _states = factory.Create();
         }
 
-        public void Start()
-        {
-            SwitchState<StartState>();
-        }
+        public void Initialize() => SwitchState<StartState>();
 
-        public void Stop()
-        {
-            _currentState?.Exit();
-        }
+        public void Dispose() => _currentState?.Exit();
 
         public void SwitchState<T>() where T : IState
         {

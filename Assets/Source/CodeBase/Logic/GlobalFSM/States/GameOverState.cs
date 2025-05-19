@@ -1,4 +1,5 @@
 using Source.CodeBase.GameplayData;
+using Source.CodeBase.GameplayData.ActionBar;
 using Source.CodeBase.Logic.Controllers;
 
 namespace Source.CodeBase.Logic.GlobalFSM.States
@@ -6,22 +7,22 @@ namespace Source.CodeBase.Logic.GlobalFSM.States
     public class GameOverState : GameState
     {
         private readonly ViewController _viewController;
-        private readonly IReadOnlyScore _score;
+        private readonly IReadOnlyMap _map;
 
         public GameOverState(
             IStateSwitcher switcher,
             ViewController viewController,
-            IReadOnlyScore score) : base(switcher)
+            IReadOnlyMap map) : base(switcher)
         {
             _viewController = viewController;
-            _score = score;
+            _map = map;
         }
 
         public override void Enter()
         {
             base.Enter();
 
-            if (_score.IsPlayerWin)
+            if (_map.IsItemsEnded)
                 _viewController.ShowWinScreen();
             else
                 _viewController.ShowLoseScreen();
