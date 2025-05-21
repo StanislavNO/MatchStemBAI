@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: PrefabsBundle
   m_EditorClassIdentifier: Assembly-CSharp:Source.CodeBase.Configs:Bundle
+  <Prefabs>k__BackingField:
+  - {fileID: 5469081286779078760, guid: b17b1ddf71ef34f709e0a2fe7e374b91, type: 3}
+  - {fileID: 6679077828974910525, guid: 81a9e7cbe02cf480f8403092b97ac642, type: 3}
+  - {fileID: 2500535184062118099, guid: e36a12feb8bdb4419b4050b64880df0c, type: 3}

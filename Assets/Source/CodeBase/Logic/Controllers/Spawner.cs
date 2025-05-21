@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Source.CodeBase.Configs;
 using Source.CodeBase.GameplayData.Environment;
-using Source.CodeBase.GameplayData.Item;
+using Source.CodeBase.GameplayData.Items;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.Infrastructure.Services.Rondomizer;
 using UnityEngine;

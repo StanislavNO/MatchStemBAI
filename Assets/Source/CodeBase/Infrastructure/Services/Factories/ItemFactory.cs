@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Source.CodeBase.Configs;
-using Source.CodeBase.GameplayData.Item;
+using Source.CodeBase.GameplayData.Items;
 using UnityEngine;
 
 namespace Source.CodeBase.Infrastructure.Services.Factories

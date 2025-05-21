@@ -1,14 +1,17 @@
 using System;
 using UnityEngine;
 
-namespace Source.CodeBase.GameplayData.Item
+namespace Source.CodeBase.GameplayData.Items
 {
     public class Item : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _figure;
         [SerializeField] private Rigidbody2D _rigidbody;
+        [SerializeField] private Transform _transform;
 
         [field: SerializeField] public ItemData Data { get; private set; }
+        
+        public Vector2 Position => _transform.position;
 
         private void Init()
         {
@@ -27,7 +30,7 @@ namespace Source.CodeBase.GameplayData.Item
     {
         public Color Color;
         public Sprite Figure;
-        public Content Content;
+        public Sprite Content;
 
         public static bool operator ==(ItemData data1, ItemData data2)
         {
@@ -46,10 +49,5 @@ namespace Source.CodeBase.GameplayData.Item
         {
             return !(data1 == data2);
         }
-    }
-
-    public enum Content
-    {
-        Cat
     }
 }

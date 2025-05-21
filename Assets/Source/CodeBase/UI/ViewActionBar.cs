@@ -1,24 +1,16 @@
 using System.Collections.Generic;
-using Source.CodeBase.GameplayData.ActionBar;
-using Source.CodeBase.GameplayData.Item;
+using Source.CodeBase.GameplayData.Items;
 using UnityEngine;
-using Zenject;
 
 namespace Source.CodeBase.UI
 {
     public class ViewActionBar : MonoBehaviour
     {
-        [SerializeField] private List<RectTransform> _places;
+        [SerializeField] private List<Place> _places;
         
-        private IReadOnlyBar _bar;
+        [field: SerializeField] public Vector2 PoolPosition { get; private set; }
 
-        //[Inject]
-        private void Init(IReadOnlyBar bar)
-        {
-            _bar = bar;
-        }
-        
-        public void Show(int placeIndex, Item items)
+        public void Show(IReadOnlyList<Item> items)
         {
             
         }

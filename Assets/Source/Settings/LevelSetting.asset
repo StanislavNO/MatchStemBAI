@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af786cf9147a48a1b96946d11053c4ac, type: 3}
   m_Name: LevelSetting
   m_EditorClassIdentifier: 
-  <SpawnDelaySecond>k__BackingField: 0
+  <MaxItemsInBar>k__BackingField: 0
+  <SpawningSettings>k__BackingField:
+    <SpawnDelaySecond>k__BackingField: 0.09
+    <MaxItems>k__BackingField: 158
+    <StartSpeedItem>k__BackingField: 15.7
+  <Bundle>k__BackingField: {fileID: 11400000, guid: 94c429b9afa4b4c169530d43fb617df2, type: 2}

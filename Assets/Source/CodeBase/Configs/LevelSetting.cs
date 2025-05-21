@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Source.CodeBase.GameplayData.Item;
+using Source.CodeBase.GameplayData.Items;
 using UnityEngine;
 
 namespace Source.CodeBase.Configs
@@ -8,6 +8,7 @@ namespace Source.CodeBase.Configs
     [CreateAssetMenu(fileName = "LevelSetting", menuName = "LevelSetting")]
     public class LevelSetting : ScriptableObject
     {
+        [field: SerializeField] public int MaxItemsInBar { get; private set; } = 7;
         [field: SerializeField] public SpawningSettings SpawningSettings { get; private set; }
         [field: SerializeField] public Bundle Bundle { get; private set; }
     }

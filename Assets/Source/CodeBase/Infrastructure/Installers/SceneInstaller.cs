@@ -1,5 +1,6 @@
 using System;
 using Source.CodeBase.GameplayData;
+using Source.CodeBase.GameplayData.ActionBar;
 using Source.CodeBase.GameplayData.Environment;
 using Source.CodeBase.Infrastructure.Services.Factories;
 using Source.CodeBase.Logic.Controllers;
@@ -14,6 +15,7 @@ namespace Source.CodeBase.Infrastructure.Installers
     {
         [SerializeField] private ViewActionBar _viewActionBar;
         [SerializeField] private SpawnPoint _spawnPoint;
+        [SerializeField] private UIParticleMover _uiParticleMover;
 
         public override void InstallBindings()
         {
@@ -37,6 +39,8 @@ namespace Source.CodeBase.Infrastructure.Installers
                 .BindInterfacesAndSelfTo<SpawnPoint>()
                 .FromInstance(_spawnPoint)
                 .AsSingle();
+            
+            Container.BindInstance(_uiParticleMover).AsSingle();
         }
 
         private void BindDatas()
