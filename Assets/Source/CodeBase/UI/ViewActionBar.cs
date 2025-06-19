@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Source.CodeBase.GameplayData.Items;
 using UnityEngine;
@@ -12,7 +13,8 @@ namespace Source.CodeBase.UI
 
         public void Show(IReadOnlyList<Item> items)
         {
-            
+            ArrayList tmpItems = new ArrayList();
+            tmpItems.Add(1);
         }
     }
 }
